@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - TaxZone.ai | Des Plaines Tax Preparation Services</title>
+    <meta name="description" content="Contact TaxZone.ai for professional tax preparation in Des Plaines, IL. Call 708-394-SAVE or email amish@taxzone.ai for expert tax services.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">TaxZone.ai</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="help.html">Help & FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="pay.html">Pay Invoice</a></li>
+            </ul>
+            <div class="nav-toggle" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" style="padding: 3rem 0;">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <p>Ready to experience professional tax preparation with a personal touch? We're here to help.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
+                    <div>
+                        <h2 class="section-subtitle">Get In Touch</h2>
+                        <p style="font-size: 1.1rem; margin-bottom: 2rem;">We'd love to hear from you! Whether you have questions about our services, need tax advice, or want to schedule an appointment, we're here to help.</p>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <h3 style="color: var(--primary-navy); margin-bottom: 1rem; display: flex; align-items: center;">
+                                <span style="font-size: 1.5rem; margin-right: 0.5rem;">📞</span>
+                                Phone
+                            </h3>
+                            <p style="font-size: 1.2rem; margin-bottom: 0.5rem;"><strong><a href="tel:7083947283" style="color: var(--primary-navy); text-decoration: none;">708-394-SAVE (708-394-7283)</a></strong></p>
+                            <p style="color: var(--gray-600);">Call us during business hours for immediate assistance or to schedule an appointment.</p>
+                        </div>
+
+                        <div style="margin-bottom: 2rem;">
+                            <h3 style="color: var(--primary-navy); margin-bottom: 1rem; display: flex; align-items: center;">
+                                <span style="font-size: 1.5rem; margin-right: 0.5rem;">📧</span>
+                                Email
+                            </h3>
+                            <p style="font-size: 1.2rem; margin-bottom: 0.5rem;"><strong><a href="mailto:amish@taxzone.ai" style="color: var(--primary-navy); text-decoration: none;">amish@taxzone.ai</a></strong></p>
+                            <p style="color: var(--gray-600);">Send us an email and we'll get back to you within one business day.</p>
+                        </div>
+
+                        <div style="margin-bottom: 2rem;">
+                            <h3 style="color: var(--primary-navy); margin-bottom: 1rem; display: flex; align-items: center;">
+                                <span style="font-size: 1.5rem; margin-right: 0.5rem;">📍</span>
+                                Location
+                            </h3>
+                            <p style="font-size: 1.1rem; margin-bottom: 0.5rem;"><strong>Des Plaines, Illinois</strong></p>
+                            <p style="color: var(--gray-600);">Proudly serving Des Plaines and the surrounding Chicagoland area.</p>
+                        </div>
+
+                        <div style="background: var(--light-bg); padding: 2rem; border-radius: 1rem; margin-top: 2rem;">
+                            <h3 style="color: var(--primary-navy); margin-bottom: 1rem;">Business Hours</h3>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                                <span><strong>Monday - Friday:</strong></span>
+                                <span>9:00 AM - 6:00 PM</span>
+                                <span><strong>Saturday:</strong></span>
+                                <span>10:00 AM - 4:00 PM</span>
+                                <span><strong>Sunday:</strong></span>
+                                <span>By appointment only</span>
+                            </div>
+                            <p style="margin-top: 1rem; color: var(--gray-600); font-size: 0.9rem;"><em>Extended hours available during tax season (January - April)</em></p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="contact-form">
+                            <h2 style="text-align: center; margin-bottom: 1.5rem; color: var(--primary-navy);">Send Us a Message</h2>
+                            <p style="text-align: center; margin-bottom: 2rem; color: var(--gray-600);">Fill out the form below and we'll get back to you as soon as possible.</p>
+                            
+                            <form action="#" method="POST" onsubmit="handleFormSubmit(event)">
+                                <div class="form-group">
+                                    <label for="name">Full Name *</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="service">Service Interested In</label>
+                                    <select id="service" name="service" style="width: 100%; padding: 0.75rem; border: 2px solid var(--gray-200); border-radius: 0.5rem; font-size: 1rem;">
+                                        <option value="">Select a service...</option>
+                                        <option value="individual-tax">Individual Tax Preparation</option>
+                                        <option value="business-tax">Business Tax Services</option>
+                                        <option value="bookkeeping">Bookkeeping</option>
+                                        <option value="consultation">Tax Planning Consultation</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="message">Message *</label>
+                                    <textarea id="message" name="message" placeholder="Tell us about your tax situation or what questions you have..." required></textarea>
+                                </div>
+
+                                <div class="form-group" style="margin-bottom: 0;">
+                                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                                </div>
+                            </form>
+
+                            <div id="form-success" style="display: none; text-align: center; padding: 2rem; background: var(--accent-green); color: white; border-radius: 0.5rem; margin-top: 1rem;">
+                                <h4>Thank you for your message!</h4>
+                                <p>We'll get back to you within one business day.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background: var(--gray-50);">
+            <div class="container">
+                <h2 class="section-title">Why Choose TaxZone.ai?</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🤝</div>
+                        <h3>Personal Service</h3>
+                        <p>Direct access to your tax preparer. No call centers or account numbers — we know you by name.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">📍</div>
+                        <h3>Local Expertise</h3>
+                        <p>Deep knowledge of Illinois tax laws and local requirements for Des Plaines area residents and businesses.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">⏰</div>
+                        <h3>Flexible Scheduling</h3>
+                        <p>Appointments available during business hours, evenings, and weekends to fit your busy schedule.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background: var(--primary-navy); color: white;">
+            <div class="container text-center">
+                <h2 style="color: white; margin-bottom: 2rem;">Ready to Get Started?</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem;">Don't wait until the last minute. Contact us today to schedule your tax preparation appointment.</p>
+                <div class="cta-buttons">
+                    <a href="tel:7083947283" class="btn btn-primary">Call Now: 708-394-SAVE</a>
+                    <a href="mailto:amish@taxzone.ai" class="btn btn-secondary">Email Us</a>
+                </div>
+                <div style="margin-top: 2rem;">
+                    <p><em>Same-day appointments often available during non-peak times.</em></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TaxZone.ai</h3>
+                    <p>Income Tax & Bookkeeping, Inc.</p>
+                    <p>Des Plaines, IL</p>
+                    <p>708-394-SAVE (708-394-7283)</p>
+                    <a href="mailto:amish@taxzone.ai">amish@taxzone.ai</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <a href="services.html">Individual Tax Prep</a>
+                    <a href="services.html">Business Tax Services</a>
+                    <a href="services.html">Bookkeeping</a>
+                    <a href="help.html">Help & FAQ</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="pay.html">Pay Invoice</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Income Tax & Bookkeeping, Inc. | Des Plaines, IL | 708-394-SAVE</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleNav() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            // Here you would normally submit the form to a server
+            // For now, we'll just show a success message
+            document.getElementById('form-success').style.display = 'block';
+            event.target.style.display = 'none';
+            
+            // In a real implementation, you'd send the form data to your server:
+            // const formData = new FormData(event.target);
+            // fetch('/contact', { method: 'POST', body: formData })
+            //   .then(response => response.json())
+            //   .then(data => { /* handle response */ });
+        }
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+
+        // Responsive grid fix for contact page
+        window.addEventListener('resize', function() {
+            const contactGrid = document.querySelector('.container > div[style*="grid-template-columns"]');
+            if (contactGrid && window.innerWidth <= 768) {
+                contactGrid.style.gridTemplateColumns = '1fr';
+                contactGrid.style.gap = '2rem';
+            } else if (contactGrid && window.innerWidth > 768) {
+                contactGrid.style.gridTemplateColumns = '1fr 1fr';
+                contactGrid.style.gap = '4rem';
+            }
+        });
+
+        // Initial check for responsive design
+        window.dispatchEvent(new Event('resize'));
+    </script>
+</body>
+</html>
