@@ -3,20 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pay Your Invoice - TaxZone.ai | Secure Online Payment Portal</title>
-    <meta name="description" content="Pay your TaxZone.ai invoice securely online. Professional tax preparation services in Des Plaines, IL. Contact us at 708-394-SAVE for assistance.">
+    <title>Pay Your Invoice - Income Tax & Bookkeeping, Inc. | Client Payment Portal</title>
+    <meta name="description" content="Pay your invoice securely. Look up your invoice using your information. Professional tax preparation services in Des Plaines, IL.">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
         <nav>
-            <a href="index.html" class="logo">TaxZone.ai</a>
+            <a href="index.html" class="logo">Income Tax & Bookkeeping, Inc.</a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="help.html">Help & FAQ</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="help.html">Help</a></li>
                 <li><a href="pay.html">Pay Invoice</a></li>
             </ul>
             <div class="nav-toggle" onclick="toggleNav()">
@@ -31,105 +29,80 @@
         <section class="hero" style="padding: 3rem 0;">
             <div class="container">
                 <h1>Pay Your Invoice</h1>
-                <p>Secure, convenient online payment for TaxZone.ai services</p>
+                <p>Look up and pay your invoice securely</p>
             </div>
         </section>
 
         <section class="section">
             <div class="container">
-                <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+                <div style="max-width: 600px; margin: 0 auto;">
                     
-                    <div style="background: var(--light-bg); padding: 3rem; border-radius: 1rem; box-shadow: var(--shadow); margin-bottom: 2rem;">
-                        <div style="font-size: 4rem; color: var(--primary-navy); margin-bottom: 1.5rem;">💳</div>
-                        <h2 style="color: var(--primary-navy); margin-bottom: 1.5rem;">Payment Portal Coming Soon!</h2>
-                        <p style="font-size: 1.1rem; margin-bottom: 2rem;">We're setting up a secure online payment system to make paying your invoice even easier. In the meantime, please use one of the convenient payment options below.</p>
+                    <div class="contact-form" id="lookup-form">
+                        <h2 style="text-align: center; margin-bottom: 1.5rem; color: var(--primary-navy);">Look Up Your Invoice</h2>
+                        <p style="text-align: center; margin-bottom: 2rem; color: var(--gray-600);">Enter your information below to find your invoice.</p>
                         
-                        <div style="background: white; padding: 2rem; border-radius: 0.5rem; border: 2px solid var(--accent-green); margin-bottom: 2rem;">
-                            <h3 style="color: var(--primary-navy); margin-bottom: 1rem;">🚀 What's Coming</h3>
-                            <ul style="text-align: left; padding-left: 2rem;">
-                                <li style="margin-bottom: 0.5rem;">Secure credit and debit card payments</li>
-                                <li style="margin-bottom: 0.5rem;">Bank transfer (ACH) options</li>
-                                <li style="margin-bottom: 0.5rem;">Digital wallet support (Apple Pay, Google Pay)</li>
-                                <li style="margin-bottom: 0.5rem;">Automatic payment confirmations</li>
-                                <li style="margin-bottom: 0.5rem;">Payment history and receipts</li>
-                            </ul>
+                        <form onsubmit="handleLookup(event)">
+                            <div class="form-group">
+                                <label for="ssn">Last 4 Digits of Social Security Number *</label>
+                                <input type="text" id="ssn" name="ssn" maxlength="4" pattern="[0-9]{4}" placeholder="1234" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" placeholder="(708) 394-7283" required>
+                            </div>
+
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <button type="submit" class="btn btn-primary" style="width: 100%;">Look Up Invoice</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div id="lookup-result" style="display: none; text-align: center; padding: 3rem; background: var(--light-bg); border-radius: 1rem; margin-top: 2rem;">
+                        <div style="font-size: 3rem; color: var(--accent-gold); margin-bottom: 1rem;">⏳</div>
+                        <h3 style="color: var(--primary-navy); margin-bottom: 1rem;">Invoice Lookup Coming Soon</h3>
+                        <p style="font-size: 1.1rem; margin-bottom: 2rem;">Our automated invoice lookup system is being connected to our tax system backend. In the meantime, please contact us directly for your invoice.</p>
+                        <div>
+                            <p style="margin-bottom: 1rem;"><strong>Call us at:</strong> <a href="tel:7083947283" style="color: var(--primary-navy); text-decoration: none;">708-394-SAVE</a></p>
+                            <p><strong>Email us at:</strong> <a href="mailto:amish@taxzone.ai" style="color: var(--primary-navy); text-decoration: none;">amish@taxzone.ai</a></p>
                         </div>
                     </div>
 
-                    <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: var(--shadow); margin-bottom: 2rem;">
-                        <h2 style="color: var(--primary-navy); margin-bottom: 1.5rem;">Current Payment Options</h2>
+                    <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: var(--shadow); margin-top: 2rem;">
+                        <h3 style="color: var(--primary-navy); margin-bottom: 1rem; text-align: center;">Current Payment Options</h3>
                         
-                        <div style="display: grid; gap: 1.5rem; margin-bottom: 2rem;">
-                            <div style="padding: 1.5rem; background: var(--gray-50); border-radius: 0.5rem; text-align: left;">
-                                <h3 style="color: var(--primary-navy); margin-bottom: 0.5rem; display: flex; align-items: center;">
-                                    <span style="font-size: 1.5rem; margin-right: 0.5rem;">📞</span>
-                                    Phone Payment
-                                </h3>
-                                <p style="margin-bottom: 0.5rem;">Call us to pay over the phone with credit or debit card</p>
-                                <p><strong><a href="tel:7083947283" style="color: var(--accent-green); text-decoration: none;">708-394-SAVE (708-394-7283)</a></strong></p>
+                        <div style="display: grid; gap: 1rem;">
+                            <div style="padding: 1.5rem; background: var(--gray-50); border-radius: 0.5rem; text-align: center;">
+                                <h4 style="color: var(--primary-navy); margin-bottom: 0.5rem;">📞 Phone Payment</h4>
+                                <p style="margin-bottom: 0.5rem;">Pay with credit or debit card over the phone</p>
+                                <p><strong><a href="tel:7083947283" style="color: var(--accent-green); text-decoration: none;">708-394-SAVE</a></strong></p>
                             </div>
 
-                            <div style="padding: 1.5rem; background: var(--gray-50); border-radius: 0.5rem; text-align: left;">
-                                <h3 style="color: var(--primary-navy); margin-bottom: 0.5rem; display: flex; align-items: center;">
-                                    <span style="font-size: 1.5rem; margin-right: 0.5rem;">🏦</span>
-                                    Bank Transfer
-                                </h3>
-                                <p style="margin-bottom: 0.5rem;">Send payment directly from your bank account</p>
-                                <p><em>Contact us for banking details and instructions</em></p>
-                            </div>
-
-                            <div style="padding: 1.5rem; background: var(--gray-50); border-radius: 0.5rem; text-align: left;">
-                                <h3 style="color: var(--primary-navy); margin-bottom: 0.5rem; display: flex; align-items: center;">
-                                    <span style="font-size: 1.5rem; margin-right: 0.5rem;">📧</span>
-                                    Email Invoice
-                                </h3>
-                                <p style="margin-bottom: 0.5rem;">Request a detailed invoice via email</p>
+                            <div style="padding: 1.5rem; background: var(--gray-50); border-radius: 0.5rem; text-align: center;">
+                                <h4 style="color: var(--primary-navy); margin-bottom: 0.5rem;">📧 Email for Details</h4>
+                                <p style="margin-bottom: 0.5rem;">Request invoice details and payment instructions</p>
                                 <p><strong><a href="mailto:amish@taxzone.ai" style="color: var(--accent-green); text-decoration: none;">amish@taxzone.ai</a></strong></p>
-                            </div>
-
-                            <div style="padding: 1.5rem; background: var(--gray-50); border-radius: 0.5rem; text-align: left;">
-                                <h3 style="color: var(--primary-navy); margin-bottom: 0.5rem; display: flex; align-items: center;">
-                                    <span style="font-size: 1.5rem; margin-right: 0.5rem;">✉️</span>
-                                    Mail Payment
-                                </h3>
-                                <p style="margin-bottom: 0.5rem;">Send a check by mail to our Des Plaines office</p>
-                                <p><em>Contact us for mailing address and instructions</em></p>
                             </div>
                         </div>
 
-                        <div style="background: var(--light-bg); padding: 1.5rem; border-radius: 0.5rem; border-left: 5px solid var(--accent-gold);">
+                        <div style="background: var(--light-bg); padding: 1.5rem; border-radius: 0.5rem; border-left: 5px solid var(--accent-gold); margin-top: 1.5rem;">
                             <p><strong>💡 Pro Tip:</strong> Have your invoice number ready when calling or emailing to ensure quick and accurate payment processing.</p>
                         </div>
                     </div>
 
-                    <div style="background: var(--primary-navy); color: white; padding: 2rem; border-radius: 1rem; margin-bottom: 2rem;">
-                        <h3 style="color: white; margin-bottom: 1rem;">Questions About Your Invoice?</h3>
-                        <p style="margin-bottom: 1.5rem;">If you have any questions about your invoice or need assistance with payment, we're here to help!</p>
-                        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                            <a href="tel:7083947283" class="btn btn-primary">Call 708-394-SAVE</a>
-                            <a href="mailto:amish@taxzone.ai" class="btn btn-secondary">Send Email</a>
-                        </div>
-                    </div>
-
-                    <div style="background: white; padding: 2rem; border-radius: 1rem; border: 1px solid var(--gray-200);">
-                        <h3 style="color: var(--primary-navy); margin-bottom: 1rem;">🔒 Your Security is Our Priority</h3>
-                        <p style="margin-bottom: 1rem;">When our online payment portal launches, it will feature:</p>
-                        <ul style="text-align: left; padding-left: 2rem; max-width: 400px; margin: 0 auto;">
-                            <li style="margin-bottom: 0.5rem;">Bank-level encryption (SSL/TLS)</li>
-                            <li style="margin-bottom: 0.5rem;">PCI DSS compliance</li>
-                            <li style="margin-bottom: 0.5rem;">Secure tokenization</li>
-                            <li style="margin-bottom: 0.5rem;">Fraud protection</li>
-                            <li style="margin-bottom: 0.5rem;">No stored payment information</li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </section>
 
         <section class="section" style="background: var(--gray-50);">
             <div class="container">
-                <h2 class="section-title">Why Choose TaxZone.ai?</h2>
+                <h2 class="section-title">Why Choose Us?</h2>
                 <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🔒</div>
+                        <h3>Secure Payments</h3>
+                        <p>All payment processing uses bank-level encryption and security protocols to protect your information.</p>
+                    </div>
                     <div class="service-card">
                         <div class="service-icon">🤝</div>
                         <h3>Transparent Pricing</h3>
@@ -138,24 +111,19 @@
                     <div class="service-card">
                         <div class="service-icon">⭐</div>
                         <h3>Quality Service</h3>
-                        <p>Professional tax preparation with a 100% accuracy guarantee and personal attention to every detail.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">🏆</div>
-                        <h3>Trusted Legacy</h3>
-                        <p>Decades of experience serving the Des Plaines community with integrity and excellence.</p>
+                        <p>Professional tax preparation with personal attention to every detail and your satisfaction guaranteed.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section">
+        <section class="section" style="background: var(--primary-navy); color: white;">
             <div class="container text-center">
-                <h2 class="section-title">Need Help with Your Payment?</h2>
-                <p style="font-size: 1.2rem; margin-bottom: 2rem;">We're here to make the payment process as easy as possible. Contact us with any questions or concerns.</p>
-                <div class="cta-buttons">
-                    <a href="contact.html" class="btn btn-primary">Contact Us</a>
-                    <a href="help.html" class="btn btn-secondary" style="color: var(--primary-navy); border-color: var(--primary-navy);">View FAQ</a>
+                <h2 style="color: white; margin-bottom: 2rem;">Questions About Your Invoice?</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem;">We're here to help make payment as easy as possible.</p>
+                <div>
+                    <p style="font-size: 1.3rem; margin-bottom: 0.5rem;"><strong>Call us at:</strong> <a href="tel:7083947283" style="color: var(--accent-gold); text-decoration: none;">708-394-SAVE</a></p>
+                    <p style="font-size: 1.1rem;"><strong>Email:</strong> <a href="mailto:amish@taxzone.ai" style="color: var(--accent-gold); text-decoration: none;">amish@taxzone.ai</a></p>
                 </div>
             </div>
         </section>
@@ -165,23 +133,21 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>TaxZone.ai</h3>
-                    <p>Income Tax & Bookkeeping, Inc.</p>
+                    <h3>Income Tax & Bookkeeping, Inc.</h3>
                     <p>Des Plaines, IL</p>
                     <p>708-394-SAVE (708-394-7283)</p>
                     <a href="mailto:amish@taxzone.ai">amish@taxzone.ai</a>
                 </div>
                 <div class="footer-section">
                     <h3>Services</h3>
-                    <a href="services.html">Individual Tax Prep</a>
-                    <a href="services.html">Business Tax Services</a>
-                    <a href="services.html">Bookkeeping</a>
-                    <a href="help.html">Help & FAQ</a>
+                    <p>Individual Tax Preparation</p>
+                    <p>Business Tax Services</p>
+                    <p>Bookkeeping</p>
                 </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <a href="about.html">About Us</a>
-                    <a href="contact.html">Contact</a>
+                    <a href="help.html">Help</a>
                     <a href="pay.html">Pay Invoice</a>
                     <a href="privacy.html">Privacy Policy</a>
                     <a href="terms.html">Terms & Conditions</a>
@@ -198,6 +164,30 @@
             const navLinks = document.querySelector('.nav-links');
             navLinks.classList.toggle('active');
         }
+
+        function handleLookup(event) {
+            event.preventDefault();
+            
+            // Hide the form and show the result message
+            document.getElementById('lookup-form').style.display = 'none';
+            document.getElementById('lookup-result').style.display = 'block';
+        }
+
+        // Format phone number input
+        document.getElementById('phone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 6) {
+                value = value.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
+            } else if (value.length >= 3) {
+                value = value.replace(/(\d{3})(\d{3})/, '($1) $2');
+            }
+            e.target.value = value;
+        });
+
+        // Format SSN input to only allow numbers
+        document.getElementById('ssn').addEventListener('input', function(e) {
+            e.target.value = e.target.value.replace(/\D/g, '');
+        });
 
         // Close mobile menu when clicking on a link
         document.querySelectorAll('.nav-links a').forEach(link => {
